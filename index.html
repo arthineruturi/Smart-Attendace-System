@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Login</title>
+
+  <link href="https://qr.doyinsoft.com/assets/css/app.min.css" rel="stylesheet">
+  <link href="https://qr.doyinsoft.com/assets/css/style.css" rel="stylesheet" />
+  <link href="https://qr.doyinsoft.com/assets/css/all-themes.css" rel="stylesheet" />
+  <style>
+    .slimScrollBar {
+      display: none !important;
+    }
+  </style>
+  <link href="https://qr.doyinsoft.com/assets/css/extra_pages.css" rel="stylesheet" />
+   <style>
+    .role-selection {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .role-selection input[type="radio"] {
+      display: none;
+    }
+
+    .role-selection label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 40px;
+      background-color: #f8f9fa;
+      color: #333;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .role-selection label:hover {
+      background-color: #e9ecef;
+    }
+
+    .role-selection input[type="radio"]:checked + label {
+      background-color: #17a2b8;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <form class="login100-form validate-form" method="post" style="height:500px;padding-top: 40px">
+          <h1 class="text-center"><a href="https://qr.doyinsoft.com/">Smart Attendance</a></h1>
+          <span class="login100-form-title p-b-45">
+            Login
+          </span>
+
+          
+          <div class="role-selection">
+            <input type="radio" id="faculty" name="role" value="faculty" checked>
+            <label for="faculty">Faculty</label>
+            <input type="radio" id="student" name="role" value="student">
+            <label for="student">Student</label>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Valid username is required">
+            <input style="padding: 5px 5px 5px 25px !important;" class="input100" type="text" name="username">
+            <span class="focus-input100"></span>
+            <span class="label-input100">Username</span>
+          </div>
+
+
+          <div class="wrap-input100 validate-input" data-validate="Password is required">
+            <input style="padding: 5px 5px 5px 25px !important;" class="input100" type="password" name="password">
+            <span class="focus-input100"></span>
+            <span class="label-input100">Password</span>
+          </div>
+
+          <div class="flex-sb-m w-full p-t-15 p-b-20">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value=""> Remember me
+                <span class="form-check-sign">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+
+            <div>
+              <a href="asserts/forgot.html" class="txt1">
+                Forgot Password?
+              </a>
+            </div>
+          </div>
+
+
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn">
+              Login
+            </button>
+          </div>
+        </form>
+
+        <div class="login100-more"
+          style="background-image: url('https://amma.org/sites/default/files/styles/node_main_pad/public/news/global-recognition-noble-vision-amrita-vishwa-vidyapeetham-01.jpg?itok=ikxuwJJ9');background-size: cover; ">
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+  </div>
+  </section>
+  <script src="https://qr.doyinsoft.com/assets/js/app.min.js"></script>
+  <script src="https://qr.doyinsoft.com/assets/js/admin.js"></script>
+  <script src="https://qr.doyinsoft.com/assets/js/index.js"></script>
+  <link href="https://qr.doyinsoft.com/assets/plugin/toastr/toastr.min.css" rel="stylesheet" />
+  <script src="https://qr.doyinsoft.com/assets/plugin/toastr/toastr.min.js"></script>
+  <script>
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": true,
+      "progressBar": false,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  </script>
+  <script src="https://qr.doyinsoft.com/assets/js/pages.js"></script>
+  <link href="https://qr.doyinsoft.com/assets/plugin/toastr/toastr.min.css" rel="stylesheet" />
+  <script src="https://qr.doyinsoft.com/assets/plugin/toastr/toastr.min.js"></script>
+  <script>
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": true,
+      "progressBar": false,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Design by foolishdeveloper.com -->
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Password Javascript</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <script src="/app.js"></script>
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(45deg, #51c8ff, #137bca);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            width: 400px;
+            padding: 20px 40px;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            animation: slide-up 0.5s ease-in-out;
+        }
+
+        @keyframes slide-up {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        label {
+            font-weight: 500;
+            color: #101030;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            margin-top: 5px;
+            padding: 12px;
+            border-radius: 5px;
+            outline: none;
+            color: #101010;
+            border: 2px solid #c2c2c2;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #208be3;
+        }
+
+        input[type="submit"] {
+            background-color: #208be3;
+            border: none;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #137bca;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 15px 0;
+            display: inline-block;
+            color: #ffffff;
+            padding: 4px;
+            text-align: center;
+            animation: fade-in 0.5s ease-in-out;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 27px;
+            text-align: center;
+            margin-bottom: 50px;
+            animation: scale-up 0.5s ease-in-out;
+        }
+
+        @keyframes scale-up {
+            0% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #success-message {
+            display: none;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 20px;
+            animation: fade-in 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1>Password Reset</h1>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" required>
+        <span id="password-error"></span>
+        <br>
+        <input type="submit" value="Reset" onclick="showSuccessMessage()">
+        
+          
+        <div id="success-message"></div>
+    </form>
+    <!--Script-->
+    <script>
+        function showSuccessMessage() {
+    validatePassword();
+    if (passwordError.textContent === "") {
+      // Redirect to the desired link
+      window.location.href = "/submit";
+    }
+  }
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const passwordError = document.getElementById('password-error');
+        const successMessage = document.getElementById('success-message');
+
+        function validatePassword() {
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                passwordError.textContent = "Passwords do not match.";
+            } else {
+                passwordError.textContent = "";
+            }
+        }
+
+        function showSuccessMessage() {
+            validatePassword();
+            if (passwordError.textContent === "") {
+                successMessage.style.display = "block";
+                successMessage.textContent = "Password reset successful!";
+            }
+        }
+
+        confirmPasswordInput.addEventListener('input', validatePassword);
+    </script>
+</body>
+
+</html>

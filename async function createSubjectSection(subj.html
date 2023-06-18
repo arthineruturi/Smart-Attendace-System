@@ -1,0 +1,40 @@
+async function createSubjectSection(subject,user_id) {
+    const time_slots = await fetch(`/api/time-slots?course_id=${subject.course_id}`).then(res => res.json());
+    const time_slots_array = Object.values(time_slots);
+
+    const time_slot_rows = time_slots_array.map((time_slot) => {
+// content
+      return `
+        <tr style="height:40px;">
+          <td style="text-align:center;">${time_slot.day}</td>
+          <td style="text-align:center;">${time_slot.start_time}</td>
+          <td style="text-align:center;">${time_slot.end_time}</td>
+          <td style="text-align:center;">
+            <button class="presentButton" 
+              onclick='set_present(${JSON.stringify({user_id})}, ${JSON.stringify(time_slot)})'
+              ${check_enabled(time_slot) ? "": "disabled"}
+            >Present</button></td>
+        </tr>
+      `
+    })
+// heading
+    const combined_time_slot_rows = time_slot_rows.join("");
+    return `
+      <div id = ${subject.course_id}_section style="width:1300px;">
+          <label for="touch1"><div class="spa">${subject.course_name}</div></label> 
+      
+          <div id= ${subject.course_id}_dropdown>
+            <table style="border-collapse: collapse;width: 100%;">
+              <tr style="height:40px;background-color: #454242;">
+                <th style="text-align:center;">DAY</th>
+                <th style="text-align:center;">Start time</th>
+                <th style="text-align:center;">End time</th>
+                <th style="text-align:center;">Attendance</th>
+              </tr>
+              ${combined_time_slot_rows}
+            </table>
+          </div>
+        
+      </div>
+    `
+  }
